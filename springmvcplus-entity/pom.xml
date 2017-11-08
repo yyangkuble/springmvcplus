@@ -2,5 +2,43 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.springmvcplus</groupId>
   <artifactId>springmvcplus-entity</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>3.3.5</version>
+  <name>${project.artifactId}</name>
+  <url>https://github.com/yyangkuble/springmvcplus</url>
+  <description>This is a spring MVC enhancement project, and you can use the Dubbo framework to reduce our development effort by 60%, or even higher</description>
+  
+  	<licenses>
+	    <license>
+	        <name>The Apache License, Version 2.0</name>
+	        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+	    </license>
+	</licenses>
+	<developers>
+	    <developer>
+	        <name>yyangkuble</name>
+	        <email>yyangkuble@163.com</email>
+	        <roles>
+	            <role>developer</role>
+	        </roles>
+	        <timezone>+8</timezone>
+	    </developer>
+	</developers>
+	<scm>
+	    <connection>scm:git:https://github.com/yyangkuble/springmvcplus.git</connection>
+	    <developerConnection>scm:git:https://github.com/yyangkuble/springmvcplus.git</developerConnection>
+	    <url>https://github.com/yyangkuble/springmvcplus</url>
+	    <tag>v${project.version}</tag>
+	</scm>
+  
+  	<distributionManagement>
+	    <snapshotRepository>
+	        <id>ossrh</id>
+	        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	    </snapshotRepository>
+	    <repository>
+	        <id>ossrh</id>
+	        <name>Maven Central Staging Repository</name>
+	        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	    </repository>
+	</distributionManagement>
 </project>
