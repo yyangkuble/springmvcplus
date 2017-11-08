@@ -1,1 +1,1 @@
-这是一个spring mvc 增强的项目, 可以使用dubbo框架, 让我们的开发工作量可以减少60%,甚至更高
+This is a spring MVC enhancement project, and you can use the Dubbo framework to reduce our development effort by 60%, or even higher
