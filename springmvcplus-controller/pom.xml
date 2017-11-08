@@ -1,0 +1,152 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.springmvcplus</groupId>
+  <artifactId>springmvcplus-controller</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+  	<junit.version>4.12</junit.version>
+		<spring.version>4.2.4.RELEASE</spring.version>
+		<pagehelper.version>5.1.2</pagehelper.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+		<dubbo.version>2.8.4</dubbo.version>
+		<zookeeper.version>3.4.7</zookeeper.version>
+		<zkclient.version>0.1</zkclient.version>		
+		<mybatis.version>3.2.8</mybatis.version>
+		<mybatis.spring.version>1.2.2</mybatis.spring.version>
+		<mybatis.paginator.version>1.2.15</mybatis.paginator.version>
+		<mysql.version>5.1.32</mysql.version>		
+		<druid.version>1.0.9</druid.version>
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<commons-codec.version>1.10</commons-codec.version>
+		<freemarker.version>2.3.23</freemarker.version>
+		<activemq.version>5.11.2</activemq.version>
+		<security.version>3.2.3.RELEASE</security.version>		
+		<solrj.version>4.10.3</solrj.version>
+		<ik.version>2012_u6</ik.version>	
+		<fastJson.version>1.2.28</fastJson.version>	
+		<javassist.version>3.11.0.GA</javassist.version>
+  </properties>
+  <dependencies>
+  	
+  	<!-- Spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>	
+		<version>${spring.version}</version>	
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>	
+		<version>${spring.version}</version>		
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>	
+		<version>${spring.version}</version>		
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aspects</artifactId>
+		<version>${spring.version}</version>			
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>	
+		<version>${spring.version}</version>		
+	</dependency>
+	<!-- dubbo相关 -->
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>dubbo</artifactId>	
+		<version>${dubbo.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.zookeeper</groupId>
+		<artifactId>zookeeper</artifactId>	
+		<version>${zookeeper.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.github.sgroschupf</groupId>
+		<artifactId>zkclient</artifactId>	
+		<version>${zkclient.version}</version>	
+	</dependency>
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>fastjson</artifactId>
+		<version>${fastJson.version}</version>		
+	</dependency>
+	<dependency>
+		<groupId>javassist</groupId>
+		<artifactId>javassist</artifactId>	
+		<version>${javassist.version}</version>	
+	</dependency>
+	<dependency>
+	    <groupId>commons-codec</groupId>
+	    <artifactId>commons-codec</artifactId>	
+	    <version>${commons-codec.version}</version>   
+	</dependency>
+	<!-- pagehelper有bug必须在service和web的pom文件里面都要加入依赖 -->
+	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>	   
+	    <version>${pagehelper.version}</version>
+	</dependency>
+  	<!-- 通用mapper,会自动依赖 persistence-api-1.0.jar-->
+	<dependency>
+	    <groupId>tk.mybatis</groupId>
+	    <artifactId>mapper</artifactId>
+	    <version>3.4.4</version>
+	</dependency>	
+  	<!-- Mybatis -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>	
+		<version>${mybatis.version}</version>	
+	</dependency>
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>		
+		<version>${mybatis.spring.version}</version>
+	</dependency>
+  
+  
+  	<dependency>
+  		<groupId>com.github.springmvcplus</groupId>
+  		<artifactId>springmvcplus-entity</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.springmvcplus</groupId>
+  		<artifactId>springmvcplus-interface</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+		<plugins>			
+			<!-- java编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
+		
+		<pluginManagement>
+			<plugins>
+			<!-- 配置Tomcat插件 -->
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
